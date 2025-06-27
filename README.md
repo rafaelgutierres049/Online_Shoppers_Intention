@@ -139,4 +139,4 @@ This project is licensed under the MIT License.
 
 ## Autor
 
-Developed by Rafael Ponte Gutierres.
+Developed by **Rafael Ponte Gutierres**.
