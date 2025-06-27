@@ -6,7 +6,7 @@ Este projeto utiliza **Regressão Logística com PyTorch** para prever a **inten
 
 ## Objetivo
 
-Desenvolver um modelo de **classificação binária** que identifique se um visitante realizará ou não uma compra, com base em métricas como:
+Desenvolver um modelo de classificação binária que identifique se um visitante realizará ou não uma compra, com base em métricas como:
 - Tempo de navegação
 - Número de páginas visitadas
 - Taxas de rejeição
@@ -17,45 +17,61 @@ Desenvolver um modelo de **classificação binária** que identifique se um visi
 
 ## Dataset
 
-- **Nome**: [Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset)
-- **Fonte**: UCI Machine Learning Repository
-- **Tamanho**: 12.330 registros | 18 features
+- **Nome**: [Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset)  
+- **Fonte**: UCI Machine Learning Repository  
+- **Tamanho**: 12.330 registros | 18 features  
 - **Target**: `Revenue` → 1 (Compra realizada), 0 (Não realizou compra)
 
 ---
 
 ## Técnicas Utilizadas
 
-- Regresão Logística com PyTorch
-- Engenharia de Atributos
+- Regressão Logística com PyTorch
+- Engenharia de atributos
 - One-Hot Encoding para variáveis categóricas
-- Padronização (`StandardScaler`)
-- Avaliação com:
-  - Acurácia
-  - Classification Report
-  - Matriz de Confusão
-  - Curva ROC e AUC
+- Padronização com `StandardScaler`
+- **Validação Cruzada (5-Fold)**
+- Ajuste de `learning rate`
+- Regularização **L2 (weight_decay)** e ajuste de **classe desbalanceada (pos_weight)**
+
+---
+
+## Avaliação do Modelo
+
+### Resultados médios com Validação Cruzada (5 Folds):
+
+- **F1-Score**: `0.5205 ± 0.0306`  
+- **Recall**: `0.7765 ± 0.0227`  
+- **Precision**: `0.3917 ± 0.0289`  
+- **Accuracy**: `0.7821 ± 0.0208`
+
+O modelo apresenta **bom equilíbrio entre recall e precisão**, especialmente relevante em casos com classe minoritária importante (compradores).
 
 ---
 
 ## Estrutura do Projeto
 
-online-shoppers-purchase-prediction/
-├── data/
-│ └── online_shoppers_intention.csv
-├── models/
-│ └── model.pth
-├── plots/
-│ └── roc_curve.png
-├── src/
-│ ├── data_preparation.py
-│ ├── logistic_model.py
-│ ├── train.py
-│ ├── evaluate.py
-│ └── config.py (opcional)
-├── main.py
-├── requirements.txt
-└── README.md
+data/
+    online_shoppers_intention.csv
+models/
+    model.pth
+plots/
+    feature_importance.png
+    precision_recall.png
+    roc_curve.png
+saved_model/
+    logistic_regression_model.pth
+src/
+    cross_validation.py
+    data_preparation.py
+    evaluate.py
+    features_importance.py
+    logistic_model.py
+    train.py
+    tune_lr.py
+main.py
+README.md
+requirements.txt
 
 ---
 
@@ -64,7 +80,7 @@ online-shoppers-purchase-prediction/
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/rafaelgutierres049/online-shoppers-purchase-prediction.git
+git clone https://github.com/rafaelgutierres049/Online_Shoppers_Intention.git
 cd online-shoppers-purchase-prediction
 ```
 
@@ -86,17 +102,19 @@ python main.py
 
 ---
 
-## Resultados esperados
+## Saídas do Projeto
 
-Acurácia média esperada: ~85% (pode variar por random state ou ajustes)
+Classificação binária (compra ou não)
 
-Gráficos salvos na pasta plots/:
+Relatório exibido no terminal:
 
-    -Curva ROC com AUC
+    Acurácia, Precision, Recall, F1-Score
 
-    -Matriz de confusão exibida em tela
+Gráficos salvos em /plots:
 
-Relatório de Classificação exibido no terminal
+    Curva ROC com AUC
+
+    Matriz de confusão (exibida via matplotlib)
 
 ---
 

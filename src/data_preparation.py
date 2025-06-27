@@ -25,7 +25,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 y_test_scaled = scaler.transform(X_test)
 
-#tensor conversion
+# Tensor conversion
 X_train_tensor = torch.tensor(X_train_scaled, dtype=torch.float32)
 X_test_tensor = torch.tensor(y_test_scaled, dtype=torch.float32)
 y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32).unsqueeze(1)    
