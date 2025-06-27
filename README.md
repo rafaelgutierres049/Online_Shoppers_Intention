@@ -1,55 +1,54 @@
 # Online Shoppers Purchase Prediction
 
-Este projeto utiliza **Regressão Logística com PyTorch** para prever a **intenção de compra de usuários em um site de e-commerce**, com base em dados comportamentais extraídos de sessões de navegação.
+This project uses Logistic Regression with PyTorch to predict the purchase intention of users on an e-commerce website, based on behavioral data extracted from browsing sessions.
 
 ---
 
-## Objetivo
+## Objective
 
-Desenvolver um modelo de classificação binária que identifique se um visitante realizará ou não uma compra, com base em métricas como:
-- Tempo de navegação
-- Número de páginas visitadas
-- Taxas de rejeição
-- Tipo de visitante
-- Período da sessão, entre outros
+Develop a binary classification model to identify whether a visitor will make a purchase or not, based on metrics such as:
+- Browsing time
+- Number of pages visited
+- Bounce rates
+- Visitor type
+- Session period, among others
 
 ---
 
 ## Dataset
 
-- **Nome**: [Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset)  
-- **Fonte**: UCI Machine Learning Repository  
-- **Tamanho**: 12.330 registros | 18 features  
-- **Target**: `Revenue` → 1 (Compra realizada), 0 (Não realizou compra)
+- **Name**: [Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset)  
+- **Font**: UCI Machine Learning Repository  
+- **Size**: 12.330 registers | 18 features  
+- **Target**: `Revenue` → 1 (Made a purchase), 0 (Did not made a purchase)
 
 ---
 
-## Técnicas Utilizadas
+## Techniques Used
 
-- Regressão Logística com PyTorch
-- Engenharia de atributos
-- One-Hot Encoding para variáveis categóricas
-- Padronização com `StandardScaler`
-- **Validação Cruzada (5-Fold)**
-- Ajuste de `learning rate`
-- Regularização **L2 (weight_decay)** e ajuste de **classe desbalanceada (pos_weight)**
+- Logistic Regression implemented with PyTorch
+- Feature Engineering
+- One-Hot Encoding for categorical variables
+- Standardization using StandardScaler
+- Cross-Validation (5-Fold)
+- Learning rate tuning
+- L2 Regularization (weight_decay) and handling class imbalance with pos_weight
 
 ---
 
-## Avaliação do Modelo
+## Model Evaluation
 
-### Resultados médios com Validação Cruzada (5 Folds):
+### Average results from 5-Fold Cross-Validation:
 
 - **F1-Score**: `0.5205 ± 0.0306`  
 - **Recall**: `0.7765 ± 0.0227`  
 - **Precision**: `0.3917 ± 0.0289`  
 - **Accuracy**: `0.7821 ± 0.0208`
 
-O modelo apresenta **bom equilíbrio entre recall e precisão**, especialmente relevante em casos com classe minoritária importante (compradores).
-
+The model achieves a **good balance between recall and precision**, which is especially important in cases with an important minority class (buyers)
 ---
 
-## Estrutura do Projeto
+## Project and Structure
 
 data/
     online_shoppers_intention.csv
@@ -75,9 +74,9 @@ requirements.txt
 
 ---
 
-## Como Rodar o Projeto
+## How to Run the Project
 
-1. Clone o repositório:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/rafaelgutierres049/Online_Shoppers_Intention.git
@@ -86,7 +85,7 @@ cd online-shoppers-purchase-prediction
 
 ---
 
-2. Instale os pacotes necessários:
+2. Install required packages:
 
 ```bash
 pip install -r requirements.txt
@@ -94,7 +93,7 @@ pip install -r requirements.txt
 
 ---
 
-3. Execute o pipeline completo:
+3. Run the complete pipeline:
 
 ```bash
 python main.py
@@ -102,23 +101,23 @@ python main.py
 
 ---
 
-## Saídas do Projeto
+## Project Outputs
 
-Classificação binária (compra ou não)
+Binary classification (purchase or not)
 
-Relatório exibido no terminal:
+Terminal output report:
 
-    Acurácia, Precision, Recall, F1-Score
+- Accuracy, Precision, Recall, F1-Score
 
-Gráficos salvos em /plots:
+Plots saved to /plots folder:
 
-    Curva ROC com AUC
+- ROC Curve with AUC
 
-    Matriz de confusão (exibida via matplotlib)
+- Confusion Matrix (also displayed with matplotlib)
 
 ---
 
-## Tecnologias Utilizadas
+## Used Technologies
 
 Python 3.10+
 
@@ -132,13 +131,12 @@ matplotlib
 
 ---
 
-## Licença 
+## License
 
-Este projeto está licenciado sob a MIT License.
+This project is licensed under the MIT License.
 
 ---
 
 ## Autor
 
-Desenvolvido por Rafael Ponte Gutierres.
-
+Developed by Rafael Ponte Gutierres.
