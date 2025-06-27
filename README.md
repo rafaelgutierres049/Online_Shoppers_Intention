@@ -3,7 +3,6 @@
 This project uses Logistic Regression with PyTorch to predict the purchase intention of users on an e-commerce website, based on behavioral data extracted from browsing sessions.
 
 ---
-
 ## Objective
 
 Develop a binary classification model to identify whether a visitor will make a purchase or not, based on metrics such as:
@@ -14,7 +13,6 @@ Develop a binary classification model to identify whether a visitor will make a 
 - Session period, among others
 
 ---
-
 ## Dataset
 
 - **Name**: [Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset)  
@@ -23,7 +21,6 @@ Develop a binary classification model to identify whether a visitor will make a 
 - **Target**: `Revenue` → 1 (Made a purchase), 0 (Did not made a purchase)
 
 ---
-
 ## Techniques Used
 
 - Logistic Regression implemented with PyTorch
@@ -35,7 +32,6 @@ Develop a binary classification model to identify whether a visitor will make a 
 - L2 Regularization (weight_decay) and handling class imbalance with pos_weight
 
 ---
-
 ## Model Evaluation
 
 ### Average results from 5-Fold Cross-Validation:
@@ -47,7 +43,6 @@ Develop a binary classification model to identify whether a visitor will make a 
 
 The model achieves a **good balance between recall and precision**, which is especially important in cases with an important minority class (buyers)
 ---
-
 ## Project and Structure
 
 data/
@@ -73,7 +68,6 @@ README.md
 requirements.txt
 
 ---
-
 ## How to Run the Project
 
 1. Clone the repository:
@@ -84,7 +78,6 @@ cd online-shoppers-purchase-prediction
 ```
 
 ---
-
 2. Install required packages:
 
 ```bash
@@ -92,7 +85,6 @@ pip install -r requirements.txt
 ```
 
 ---
-
 3. Run the complete pipeline:
 
 ```bash
@@ -100,7 +92,6 @@ python main.py
 ```
 
 ---
-
 ## Project Outputs
 
 Binary classification (purchase or not)
@@ -116,7 +107,6 @@ Plots saved to /plots folder:
 - Confusion Matrix (also displayed with matplotlib)
 
 ---
-
 ## Used Technologies
 
 Python 3.10+
@@ -130,13 +120,11 @@ pandas
 matplotlib
 
 ---
-
 ## License
 
 This project is licensed under the MIT License.
 
 ---
-
 ## Autor
 
 Developed by **Rafael Ponte Gutierres**.
